@@ -127,7 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="HookMethodInDll.cpp" />
     <ClCompile Include="TeamsControlBarHider.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HookMethodInDll.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

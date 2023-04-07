@@ -18,5 +18,13 @@
     <ClCompile Include="TeamsControlBarHider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="HookMethodInDll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HookMethodInDll.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,12 +1,10 @@
-// TeamsControlBarHider.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+#include "HookMethodInDll.h"
 
 #include <iostream>
-#include <windows.h>
+#include <winnt.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <tlhelp32.h>
+#include <tchar.h>
 
 using namespace std;
 
@@ -54,18 +52,25 @@ BOOL CALLBACK HideTeamsControlBar(HWND hwnd, LPARAM lParam)
     if (lpdwProcessId == lParam)
     {
         ControlBarWindow = hwnd;
-        ShowWindow(ControlBarWindow, SW_HIDE);
+        ShowWindow(ControlBarWindow, SW_HIDE); // TODO: CHECK IF I COULD CLOSE IT INSTEAD
         return FALSE;
     }
     return TRUE;
 }
 
+// TODO: MAKE A WINDOWS SERVICE
+// TODO: HOOK WINDOW OPEN TO CHECK IF THAT WINDOW HAS THE APPROPRIATE NAME
 int main()
 {
-    DWORD teamsProcessId = FindProcessByImageName(TEAMS_PROCESS_IMAGE_NAME);
-    while (true)
-    {
-        Sleep(10);
-        EnumWindows(HideTeamsControlBar, teamsProcessId);
-    }
+    // Tried with user32.dll, doesnt work
+    HookMethodInDll hook = HookMethodInDll("Teams.exe", "ntdll.dll", "CreateWindowExA");
+
+    //DWORD teamsProcessId = FindProcessByImageName(TEAMS_PROCESS_IMAGE_NAME);
+    //// This works like a charm
+    //while (true)
+    //{
+    //    Sleep(10);
+    //    EnumWindows(HideTeamsControlBar, teamsProcessId);
+    //}
+    Sleep(60000);
 }
