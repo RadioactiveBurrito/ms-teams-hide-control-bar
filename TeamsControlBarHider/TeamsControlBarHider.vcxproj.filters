@@ -13,18 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resources">
+      <UniqueIdentifier>{4ae82cb2-bd2d-4a3f-b81c-5e724626f7a9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\Icons">
+      <UniqueIdentifier>{7228bc1e-6134-43b1-af99-80bf09a0dcb4}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="TeamsControlBarHider.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="HookMethodInDll.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HookMethodInDll.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <Image Include="resources\Hide.ico">
+      <Filter>Resources\Icons</Filter>
+    </Image>
+    <Image Include="resources\Show.ico">
+      <Filter>Resources\Icons</Filter>
+    </Image>
   </ItemGroup>
 </Project>

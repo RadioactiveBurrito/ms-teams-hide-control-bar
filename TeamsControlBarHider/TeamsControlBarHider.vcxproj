@@ -106,7 +106,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
@@ -127,11 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="HookMethodInDll.cpp" />
     <ClCompile Include="TeamsControlBarHider.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="HookMethodInDll.h" />
+    <Image Include="resources\Hide.ico" />
+    <Image Include="resources\Show.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
